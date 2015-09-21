@@ -13,7 +13,7 @@
         android:hint="Nome"
         android:ems="10"
         android:id="@+id/editTextNome"
-        android:textColor="#fff"
+        
         android:textColorHint="#a4a4a4"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="142dp" />
