@@ -19,16 +19,16 @@
 
 
 
-        <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp" android:layout_alignParentRight="true"  android:id="@+id/pic"  android:layout_alignParentTop="false" />
+        <!--<ImageView-->
+            <!--android:layout_width="70dp"-->
+            <!--android:layout_height="70dp" android:layout_alignParentRight="true"  android:id="@+id/pic"  android:layout_alignParentTop="false" />-->
 
-            <!--<de.hdodenhof.circleimageview.CircleImageView-->
-                <!--android:layout_width="70dp"-->
-                <!--android:layout_height="70dp"-->
-                <!--android:layout_alignParentTop="false"-->
-                <!--android:id="@+id/pic"-->
-                <!--android:layout_alignParentRight="true" />-->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentTop="false"
+                android:id="@+id/pic"
+                android:layout_alignParentRight="true" />
     </RelativeLayout>
 
     <RelativeLayout
