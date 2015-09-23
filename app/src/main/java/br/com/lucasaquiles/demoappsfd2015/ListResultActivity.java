@@ -36,7 +36,6 @@ public class ListResultActivity extends ActionBarActivity implements AdapterView
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         new SearchAsyncTask(ListResultActivity.this).execute(valorNome);
-
     }
 
 

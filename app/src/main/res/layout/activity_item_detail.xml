@@ -7,17 +7,19 @@
     tools:context="br.com.lucasaquiles.demoappsfd2015.ItemDetail">
 
     <RelativeLayout
-        android:layout_width="90dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="25dp"
         android:layout_centerHorizontal="true"
-        android:id="@+id/imageLayout">
+        android:id="@+id/imageLayout"
+       >
 
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+
             />
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -29,39 +31,56 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageLayout"
-
+        android:padding="15dp"
+        android:background="@drawable/border_frame"
         android:id="@+id/wrapper_conteudo">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Politico"
-            android:id="@+id/nome"
-            android:textSize="15dp"
-            android:layout_alignParentLeft="true"
-            />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="partido"
-            android:id="@+id/partido"
-            android:layout_below="@+id/nome"
-            />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Politico"
+                android:id="@+id/nome"
+                android:textSize="15dp"
+                android:layout_alignParentLeft="true"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="partido"
+                android:id="@+id/partido"
+                android:layout_below="@+id/nome"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="UF"
+                android:id="@+id/uf"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@+id/partido"
+                android:layout_below="@+id/nome"
+                />
+
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="total de despesas"
-            android:id="@+id/val_total_gastos"
             android:layout_below="@+id/partido"
+            android:id="@+id/val_total_gastos"
 
-            />
+            android:textStyle="bold" />
+
+
     </RelativeLayout>
 
 </RelativeLayout>
