@@ -15,7 +15,7 @@ public class Item implements Serializable{
     private String partido;
     private String uf;
     private String url_foto;
-    private String total_despessas;
+    private String total_despesas;
     private String total_votos;
     private String porcentagem_votos;
     private String situacao_candidatura;
@@ -78,12 +78,12 @@ public class Item implements Serializable{
         this.url_foto = url_foto;
     }
 
-    public String getTotal_despessas() {
-        return total_despessas;
+    public String getTotal_despesas() {
+        return total_despesas;
     }
 
-    public void setTotal_despessas(String total_despessas) {
-        this.total_despessas = total_despessas;
+    public void setTotal_despesas(String total_despessas) {
+        this.total_despesas = total_despessas;
     }
 
     public String getTotal_votos() {

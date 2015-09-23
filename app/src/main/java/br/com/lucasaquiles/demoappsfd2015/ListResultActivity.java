@@ -75,9 +75,7 @@ public class ListResultActivity extends ActionBarActivity implements AdapterView
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-
         Item item = (Item) parent.getItemAtPosition(position);
-
 
         Intent i  = new Intent(this, ItemDetail.class);
         i.putExtra("item", item);

@@ -51,7 +51,6 @@
             android:text="partido"
             android:id="@+id/partido"
             android:layout_below="@+id/nome"
-
             />
 
         <TextView

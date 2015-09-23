@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import br.com.lucasaquiles.demoappsfd2015.async.DownloadImageAsynTask;
+import br.com.lucasaquiles.demoappsfd2015.async.SearchAsyncTask;
 import br.com.lucasaquiles.demoappsfd2015.model.Item;
 
 
@@ -54,7 +55,7 @@ public class ItemDetail extends ActionBarActivity {
 
         textViewNome.setText(item.getNome());
         textViewPartido.setText(item.getPartido());
-        textViewValorTotalGastos.setText(item.getTotal_despessas());
+        textViewValorTotalGastos.setText(item.getTotal_despesas());
 
 
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -77,9 +78,12 @@ public class ItemDetail extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == android.R.id.home) {
+
+            Intent i = new Intent(this, SearchAsyncTask.class);
+            startActivity(i);
         }
+
 
         return super.onOptionsItemSelected(item);
     }
