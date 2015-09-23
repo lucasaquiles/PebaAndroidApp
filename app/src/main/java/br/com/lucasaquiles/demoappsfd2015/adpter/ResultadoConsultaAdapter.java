@@ -65,8 +65,8 @@ public class ResultadoConsultaAdapter extends ArrayAdapter<Item> {
         holder.partido.setText(item.getPartido());
         holder.imagem.setTag(item.getNome());
 
-
         if(holder.imagem.getDrawable() == null) {
+
             new DownloadImageAsynTask(convertView, item, holder.progressBar, holder.imagem, this.getContext()).execute(item.getUrl_foto());
         }
        // holder.imagem.setImageBitmap(downloadImageAsynTask.getBitmap());

@@ -6,12 +6,15 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import br.com.lucasaquiles.demoappsfd2015.async.SearchAsyncTask;
+import br.com.lucasaquiles.demoappsfd2015.model.Item;
 
 
-public class ListResultActivity extends ActionBarActivity {
+public class ListResultActivity extends ActionBarActivity implements AdapterView.OnItemClickListener{
 
    private ListView listView;
 
@@ -21,22 +24,21 @@ public class ListResultActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_result);
 
-        Intent i = new Intent(this, MainActivity.class);
-
-
         listView = (ListView) findViewById(R.id.list);
         listView.setBackgroundColor(Color.WHITE);
+        listView.setOnItemClickListener(this);
 
         Intent intent = getIntent();
 
         String valorNome = (String) intent.getSerializableExtra("nome");
 
-
-        new SearchAsyncTask(this).execute(valorNome);
-
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        new SearchAsyncTask(ListResultActivity.this).execute(valorNome);
+
     }
+
 
 
 
@@ -68,5 +70,18 @@ public class ListResultActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+        Item item = (Item) parent.getItemAtPosition(position);
+
+
+        Intent i  = new Intent(this, ItemDetail.class);
+        i.putExtra("item", item);
+
+        startActivity(i);
     }
 }

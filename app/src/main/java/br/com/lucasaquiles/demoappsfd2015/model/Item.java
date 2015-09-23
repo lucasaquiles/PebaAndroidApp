@@ -2,10 +2,12 @@ package br.com.lucasaquiles.demoappsfd2015.model;
 
 import android.graphics.Bitmap;
 
+import java.io.Serializable;
+
 /**
  * Created by lucasaquiles on 9/14/15.
  */
-public class Item {
+public class Item implements Serializable{
 
     private Long id;
     private String nome;

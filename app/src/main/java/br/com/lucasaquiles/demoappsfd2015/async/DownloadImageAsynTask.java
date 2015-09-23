@@ -66,12 +66,13 @@ public class DownloadImageAsynTask extends AsyncTask<String, Void, Bitmap>{
     protected void onPostExecute(Bitmap bitmap) {
 
 
-        if(this.item.getBitmap() == null  && this.imagem.getTag().equals(item.getNome())) {
+        if(this.item.getBitmap() == null) {
 
             Log.i("buscando", "baixou a imagem" );
             this.imagem.setImageBitmap(bitmap);
        }else{
            Log.i("buscando","ja tem bit map "+item.getNome());
+
        }
 
        progressBar.setVisibility(View.GONE);
