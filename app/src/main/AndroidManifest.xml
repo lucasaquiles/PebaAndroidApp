@@ -20,7 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListResultActivity" >
+        <activity android:name=".ListResultActivity"   android:label="@string/title_activity_list_result" >
         </activity>
         <activity
             android:name=".ItemDetail"
