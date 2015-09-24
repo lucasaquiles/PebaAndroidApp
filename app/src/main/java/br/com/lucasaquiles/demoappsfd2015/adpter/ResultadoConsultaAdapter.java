@@ -29,7 +29,7 @@ public class ResultadoConsultaAdapter extends ArrayAdapter<Item> {
        this.itens.addAll(itens);
     }
 
-    public class ViewHolder{
+    static class ViewHolder{
         TextView nome;
         TextView partido;
         ImageView imagem;

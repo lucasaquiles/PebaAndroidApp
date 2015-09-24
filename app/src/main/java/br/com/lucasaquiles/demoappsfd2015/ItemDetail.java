@@ -11,7 +11,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import br.com.lucasaquiles.demoappsfd2015.async.DownloadImageAsynTask;
-import br.com.lucasaquiles.demoappsfd2015.async.SearchAsyncTask;
 import br.com.lucasaquiles.demoappsfd2015.model.Item;
 
 
@@ -83,7 +82,7 @@ public class ItemDetail extends ActionBarActivity {
         //noinspection SimplifiableIfStatement
         if (id == android.R.id.home) {
 
-            Intent i = new Intent(this, SearchAsyncTask.class);
+            Intent i = new Intent(this, ListResultActivity.class);
             startActivity(i);
         }
 

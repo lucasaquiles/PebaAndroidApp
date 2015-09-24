@@ -19,6 +19,7 @@ import br.com.lucasaquiles.demoappsfd2015.model.Item;
  */
 public class SearchAsyncTask extends AsyncTask<String, Void, List<Item>>{
 
+
     private Context context;
     private ProgressDialog progressDialog;
 

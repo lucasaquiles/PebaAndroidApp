@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.ref.WeakReference;
 
 import br.com.lucasaquiles.demoappsfd2015.model.Item;
 
@@ -19,6 +20,7 @@ import br.com.lucasaquiles.demoappsfd2015.model.Item;
  */
 public class DownloadImageAsynTask extends AsyncTask<String, Void, Bitmap>{
 
+    private final WeakReference<ImageView> imageViewReference;
 
     private Item item;
     private ImageView imagem;
@@ -34,10 +36,17 @@ public class DownloadImageAsynTask extends AsyncTask<String, Void, Bitmap>{
         this.bitmap = bitmap;
     }
 
+
+    public DownloadImageAsynTask(ImageView image){
+        this.imagem = image;
+        imageViewReference  = new WeakReference<ImageView>(image);
+    }
     public DownloadImageAsynTask(View view, Item item, ProgressBar progressBar, ImageView imagem, Context context) {
         this.item = item;
         this.imagem = imagem;
         this.progressBar = progressBar;
+
+        imageViewReference = new WeakReference<ImageView>(imagem);
     }
 
     @Override
@@ -65,15 +74,14 @@ public class DownloadImageAsynTask extends AsyncTask<String, Void, Bitmap>{
     @Override
     protected void onPostExecute(Bitmap bitmap) {
 
+        if (imageViewReference != null && bitmap != null) {
 
-        if(this.item.getBitmap() == null) {
+            final ImageView imageView = imageViewReference.get();
 
-            Log.i("buscando", "baixou a imagem" );
-            this.imagem.setImageBitmap(bitmap);
-       }else{
-           Log.i("buscando","ja tem bit map "+item.getNome());
-
-       }
+            if (imageView != null) {
+                imageView.setImageBitmap(bitmap);
+            }
+        }
 
        progressBar.setVisibility(View.GONE);
     }

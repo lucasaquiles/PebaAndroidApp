@@ -17,7 +17,12 @@ import br.com.lucasaquiles.demoappsfd2015.model.Item;
 public class ListResultActivity extends ActionBarActivity implements AdapterView.OnItemClickListener{
 
    private ListView listView;
+   private static String lastSearchableTerm;
 
+
+    public static String getLastSearchableTerm() {
+        return lastSearchableTerm;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +35,29 @@ public class ListResultActivity extends ActionBarActivity implements AdapterView
 
         Intent intent = getIntent();
 
-        String valorNome = (String) intent.getSerializableExtra("nome");
+        if(intent != null) {
+
+            String valorNome = (String) intent.getSerializableExtra("nome");
+            lastSearchableTerm = valorNome;
+        }
+
 
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        new SearchAsyncTask(ListResultActivity.this).execute(valorNome);
+        if(lastSearchableTerm != null){
+            new SearchAsyncTask(ListResultActivity.this).execute(lastSearchableTerm);
+        }
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if(lastSearchableTerm != null && listView != null && listView.getAdapter() == null){
+            new SearchAsyncTask(ListResultActivity.this).execute(lastSearchableTerm);
+        }
+    }
 
     public ListView getListView() {
         return listView;
@@ -59,7 +79,6 @@ public class ListResultActivity extends ActionBarActivity implements AdapterView
 
         //noinspection SimplifiableIfStatement
 
-
         if (id == android.R.id.home) {
 
             Intent i = new Intent(this, MainActivity.class);
@@ -76,6 +95,7 @@ public class ListResultActivity extends ActionBarActivity implements AdapterView
 
         Intent i  = new Intent(this, ItemDetail.class);
         i.putExtra("item", item);
+
 
         startActivity(i);
     }
