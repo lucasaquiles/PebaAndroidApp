@@ -1,12 +1,12 @@
 package br.com.lucasaquiles.demoappsfd2015.async;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.ArrayAdapter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import br.com.lucasaquiles.demoappsfd2015.ListResultActivity;
@@ -48,9 +48,23 @@ public class SearchAsyncTask extends AsyncTask<String, Void, List<Item>>{
             ((ListResultActivity) context).getListView().setAdapter(adp);
         }else{
 
-            ArrayAdapter itemAdapter = new ArrayAdapter(context, android.R.layout.simple_list_item_1, new ArrayList<Item>() );
 
-            ((ListResultActivity) context).getListView().setAdapter(itemAdapter);
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setMessage("Nenhum resultado encontrado").setTitle("Sorry!");
+                AlertDialog dialog = builder.create();
+                dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                    @Override
+                    public void onDismiss(DialogInterface dialog) {
+
+                        ((ListResultActivity) context).finish();
+                    }
+                });
+
+
+            dialog.show();
+//            ArrayAdapter itemAdapter = new ArrayAdapter(context, android.R.layout.simple_list_item_1, new ArrayList<Item>() );
+//
+//            ((ListResultActivity) context).getListView().setAdapter(itemAdapter);
         }
 
         progressDialog.dismiss();

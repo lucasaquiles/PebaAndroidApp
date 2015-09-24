@@ -39,8 +39,6 @@ public class ListResultActivity extends ActionBarActivity implements AdapterView
     }
 
 
-
-
     public ListView getListView() {
         return listView;
     }
