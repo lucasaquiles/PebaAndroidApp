@@ -38,8 +38,6 @@
         android:background="@drawable/border_frame"
         android:id="@+id/wrapper_conteudo">
 
-
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -73,11 +71,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="UF"
-                android:id="@+id/uf"
-                android:layout_marginLeft="15dp"
-                android:layout_toRightOf="@+id/partido"
-                android:layout_below="@+id/email"
+                android:text="situação candidatura"
+                android:id="@+id/situacao_candidatura"
+
+                android:layout_below="@+id/partido"
                 />
 
 
@@ -86,17 +83,17 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Total de despesas: "
-            android:layout_below="@+id/partido"
+            android:layout_below="@+id/situacao_candidatura"
             android:id="@+id/label_val_total"
             android:textStyle="bold"
            />
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+           android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="valor de despesas"
-            android:layout_below="@+id/partido"
+            android:layout_below="@+id/situacao_candidatura"
             android:id="@+id/val_total_gastos"
 
             android:textStyle="bold"

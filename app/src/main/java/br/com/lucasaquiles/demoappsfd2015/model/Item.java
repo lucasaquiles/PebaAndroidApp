@@ -110,6 +110,16 @@ public class Item implements Serializable{
         this.situacao_candidatura = situacao_candidatura;
     }
 
+    public String getPartidoUFFormatado(){
+
+        return getPartido() + " - "+getUf();
+    }
+
+    public String getSituacaoCandidaturaFormatado(){
+
+        return getSituacao_candidatura() + "("+getPorcentagem_votos()+" )";
+    }
+
     @Override
     public String toString() {
         return this.nome;
