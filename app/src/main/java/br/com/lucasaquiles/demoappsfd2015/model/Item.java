@@ -117,11 +117,13 @@ public class Item implements Serializable{
 
     public String getSituacaoCandidaturaFormatado(){
 
-        return getSituacao_candidatura() + "("+getPorcentagem_votos()+" )";
+        return getSituacao_candidatura() + "("+getPorcentagem_votos()+"% )";
     }
 
     @Override
     public String toString() {
         return this.nome;
     }
+
+
 }
