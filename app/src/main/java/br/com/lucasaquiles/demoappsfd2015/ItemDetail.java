@@ -22,6 +22,7 @@ public class ItemDetail extends ActionBarActivity {
     private TextView textViewPartido;
     private TextView textViewValorTotalGastos;
     private TextView textViewUf;
+    private TextView textViewEmail;
 
 
     @Override
@@ -36,6 +37,7 @@ public class ItemDetail extends ActionBarActivity {
         textViewPartido = (TextView) findViewById(R.id.partido);
         textViewValorTotalGastos = (TextView) findViewById(R.id.val_total_gastos);
         textViewUf = (TextView) findViewById(R.id.uf);
+        textViewEmail = (TextView) findViewById(R.id.email);
 
 
         Intent i = getIntent();
@@ -58,6 +60,7 @@ public class ItemDetail extends ActionBarActivity {
         textViewPartido.setText(item.getPartido());
         textViewValorTotalGastos.setText(item.getTotal_despesas());
         textViewUf.setText(item.getUf());
+        textViewEmail.setText(item.getEmail());
 
 
         getSupportActionBar().setHomeButtonEnabled(true);
